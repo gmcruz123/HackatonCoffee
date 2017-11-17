@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,24 +13,28 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.pcportatil.coffeeapp.databinding.ActivityMainBinding;
 import com.example.pcportatil.coffeeapp.fragments.MainFragment;
 import com.example.pcportatil.coffeeapp.net.PlantacionesClient;
 
-public class MainActivity extends AppCompatActivity implements DrawerLayout.DrawerListener, NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements DrawerLayout.DrawerListener, NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     ActivityMainBinding binding;
     ActionBarDrawerToggle toggle;
     PlantacionesClient client;
+    FloatingActionButton floatbut;
     int content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+
+        setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_main);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -48,6 +53,12 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
 
     }
 
+
+    public void add(){
+        Intent intent = new Intent(this,AddActivity.class);
+        startActivity(intent);
+
+    }
 
     public void putFragment(int container, Fragment fragment){
 
@@ -155,5 +166,12 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         outState.putInt("content",content);
 
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onClick(View view) {
+        Log.d("hola","entro");
+        Intent intent = new Intent(this,AddActivity.class);
+        startActivity(intent);
     }
 }
