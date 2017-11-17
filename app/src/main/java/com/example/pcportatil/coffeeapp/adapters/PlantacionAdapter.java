@@ -40,7 +40,7 @@ public class PlantacionAdapter  extends RecyclerView.Adapter<PlantacionAdapter.P
     //endregion
 
     public interface onPlantacionListener{
-        void onPlantacionClick(int position, int tipoarray);
+        void onPlantacionClick(int position);
 
     }
 
@@ -57,9 +57,9 @@ public class PlantacionAdapter  extends RecyclerView.Adapter<PlantacionAdapter.P
     }
 
 
-    public void onItemClick(int position, int tipoarray){
+    public void onItemClick(int position){
 
-        listener.onPlantacionClick(position,tipoarray);
+        listener.onPlantacionClick(position);
 
 
     }

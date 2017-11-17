@@ -68,10 +68,6 @@ public class MainFragment extends Fragment implements PlantacionAdapter.onPlanta
 
     }
 
-    @Override
-    public void onPlantacionClick(int position, int tipoarray) {
-
-    }
 
     public static MainFragment instance(int seleccion) {
         MainFragment fragment = new MainFragment();
@@ -114,6 +110,9 @@ public class MainFragment extends Fragment implements PlantacionAdapter.onPlanta
     }
 
 
+    @Override
+    public void onPlantacionClick(int position) {
 
-
+        Log.d("click", "onPlantacionClick: ");
+    }
 }
