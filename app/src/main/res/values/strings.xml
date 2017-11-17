@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CoffeeApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_servidor_registro">Error al cargar plantaciones</string>
+    <string name="plantaciones">Plantaciones</string>
+    <string name="open_menu">Menu abierto</string>
+    <string name="close_menu">Menu cerrado</string>
+</resources>
